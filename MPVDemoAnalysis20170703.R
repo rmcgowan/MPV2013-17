@@ -138,7 +138,12 @@ ggplot(zip.pk.compare.race,
            y = percentage,
            fill = killings_indicator)) +
   geom_bar(stat = "identity",
-           position = position_dodge())
+           position = position_dodge()) +
+  xlab("Race") +
+  ylab("Percentage") +
+  ggtitle("% of residents for US Census race categories for zip codes\nwith and without police involved killings (2013-17)") +
+  labs(fill = "Police-involved\nkilling in zip code?") +
+  theme(legend.position = "bottom")
 
 ##############################################
 # create data frame to look at poverty level #
@@ -156,4 +161,8 @@ ggplot(zip.pk.compare.poverty,
            y = percentage,
            fill = killings_indicator)) +
   geom_bar(stat = "identity",
-           position = position_dodge())
+           position = position_dodge()) +
+  xlab("Ratio relative to US poverty level") +
+  ylab("Percentage") +
+  ggtitle("% of residents for different ratios relative to US poverty level for zip codes\nwith and without police involved killings (2013-17)") +
+  labs(fill = "Police-involved\nkilling in zip code?")
